@@ -110,7 +110,7 @@ public class GPSUtils {
 		
 		
 		
-		// deler p� 1000 fordi returnerte distance er i meter
+		// deler på 1000 fordi returnerte distance er i meter
 		
 		double km = (distance(gpspoint1, gpspoint2))/1000;
 		
@@ -123,11 +123,21 @@ public class GPSUtils {
 	public static String formatTime(int secs) {
 
 		String timestr;
-		String TIMESEP = ":";
+		
 
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
+		int sec = secs % 60;
+		int min = secs / 60;
+		int hr = min / 60;
+		min = min % 60;
+		
+	    timestr = String.format("  %02d:%02d:%02d" , hr , min , sec);
+	    
+	    return timestr;
+		
+		
+		
 		
 		// TODO - SLUTT
 
@@ -139,10 +149,14 @@ public class GPSUtils {
 		String str;
 
 		// TODO - START
+		
+		TEXTWIDTH = 10;
 
-		throw new UnsupportedOperationException(TODO.method());
+		str = String.format ( "%,10.2f", d);
 
 		// TODO - SLUTT
+		
+		 return str;
 		
 	}
 }
