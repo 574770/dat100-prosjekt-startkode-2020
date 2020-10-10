@@ -30,12 +30,20 @@ public class GPSComputer {
 	public double totalDistance() {
 
 		double distance = 0;
+		double d; 
+		
 
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i < gpspoints.length-1; i++) {
+			d = GPSUtils.distance(gpspoints[i], gpspoints[i+1]);
+			distance += d;
+			
+		}
 
 		// TODO - SLUTT
+		
+		return distance;
 
 	}
 
@@ -43,21 +51,40 @@ public class GPSComputer {
 	public double totalElevation() {
 
 		double elevation = 0;
+		double e;
+		elevation = gpspoints[0].getElevation();
+		
+		
+		
 
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
+		for (int i=0;i<gpspoints.length-1; i++) {
+			e= gpspoints[i+1].getElevation() - gpspoints[i].getElevation();
+			elevation +=e;
+		}	
+		
+		
+		//TODO - SLUTT
+		return elevation;
+		
 
 	}
+
+
+
+	
 
 	// beregn total tiden for hele turen (i sekunder)
 	public int totalTime() {
 
-		throw new UnsupportedOperationException(TODO.method());
+		int t = gpspoints[gpspoints.length-1].getTime() - gpspoints [0].getTime();
+		
+		return t;	
 
 	}
+	
+	
 		
 	// beregn gjennomsnitshastighets mellom hver av gps punktene
 

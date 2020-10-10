@@ -150,7 +150,7 @@ public class GPSUtils {
 
 		// TODO - START
 		
-		TEXTWIDTH = 10;
+		
 
 		str = String.format ( "%,10.2f", d);
 
