@@ -6,6 +6,10 @@ import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSUtils {
+	
+	
+	
+	// Finner det minste tall i en tabell med flyttall.
 
 	public static double findMax(double[] da) {
 
@@ -21,6 +25,8 @@ public class GPSUtils {
 		
 		return max;
 	}
+	
+	// Finner det minste tall i en tabell med flyttall.
 
 	public static double findMin(double[] da) {
 
@@ -39,6 +45,8 @@ public class GPSUtils {
 		return min;
 
 	}
+	
+	// skal returnere en tabell av desimaltall inneholdende breddegradene for GPS-punktene.
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
 
@@ -87,7 +95,7 @@ public class GPSUtils {
         
         double deltaLat = toRadians(latitude2) - toRadians(latitude1);
         double deltaLong = toRadians(longitude2) - toRadians(longitude1);
-        double a = Math.pow((Math.sin(deltaLat/2.0)),2) + cos(toRadians (latitude1)) * Math.cos(toRadians(latitude2)) * Math.pow((Math.sin(deltaLong/2.0)),2);
+        double a = Math.pow((Math.sin(deltaLat/2.0)),2) + Math.cos(toRadians (latitude1)) * Math.cos(toRadians(latitude2)) * Math.pow((Math.sin(deltaLong/2.0)),2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         
         d = R * c;
